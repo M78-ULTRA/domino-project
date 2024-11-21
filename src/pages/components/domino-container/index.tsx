@@ -1,11 +1,11 @@
-
-import { DominoCard } from '../domino-card';
+import React from 'react';
+import DominoCard from "../domino-card"; 
 
 interface DominoContainerProps {
   dominoNumbers: [number, number][]; 
 }
 
-export function DominoContainer({ dominoNumbers }: DominoContainerProps) {
+const DominoContainer: React.FC<DominoContainerProps> = ({ dominoNumbers }) => {
   return (
     <div className="grid grid-cols-5 gap-4">
       {dominoNumbers.map((numbers, index) => (
@@ -14,5 +14,8 @@ export function DominoContainer({ dominoNumbers }: DominoContainerProps) {
     </div>
   );
 }
+
+export default DominoContainer;
+
 
 

@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { DominoContainer } from '../components/domino-container';
+import DominoContainer from '../components/domino-container'; // Corrected import for default export
 import { Bokor } from "next/font/google";
-
 
 const bokorrin = Bokor({
   subsets: ["latin"], 
@@ -25,6 +24,7 @@ export default function Home() {
 
   const [dominoNumbers, setDominoNumbers] = useState<[number, number][]>(originalDominoNumbers);
   const [inputValue, setInputValue] = useState('');  
+  
   const filterRepeatingNumbers = () => {
     const filtered = originalDominoNumbers.filter(
       (domino) => domino[0] === domino[1]
@@ -78,7 +78,6 @@ export default function Home() {
     setDominoNumbers(originalDominoNumbers);
   };
 
-  
   const removeIfSumMatches = () => {
     const sum = parseInt(inputValue);  
     if (isNaN(sum)) return;  
@@ -98,7 +97,6 @@ export default function Home() {
         color: "white",
       }}
     >
- 
       <h1 className="text-8xl font-bold mb-4 bokor-regular">
         Domino deez nu-
       </h1>

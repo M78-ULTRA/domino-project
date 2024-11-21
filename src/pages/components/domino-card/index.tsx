@@ -1,6 +1,6 @@
+import React from 'react';
 import { Bokor } from 'next/font/google';
 
-// Import the Bokor font with configuration
 const bokorrin = Bokor({
   subsets: ['latin'],
   weight: '400',
@@ -11,7 +11,7 @@ interface DominoCardProps {
   numbers: [number, number]; 
 }
 
-export function DominoCard({ numbers }: DominoCardProps) {
+const DominoCard: React.FC<DominoCardProps> = ({ numbers }) => {
   return (
     <div
       className={`${bokorrin.variable} flex flex-col justify-center items-center p-4 text-white font-bold text-3xl rounded-lg shadow-xl transform hover:scale-110 transition-all border-2 border-white`}
@@ -27,6 +27,9 @@ export function DominoCard({ numbers }: DominoCardProps) {
     </div>
   );
 }
+
+export default DominoCard;
+
 
   
   
